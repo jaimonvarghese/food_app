@@ -10,6 +10,7 @@
 ✅ **Trending Dishes** – Scrollable list of popular food items  
 ✅ **Cuisine Suggestions** – Curated food types by region  
 ✅ **Responsive Design** – Mobile-first layout adapts to screen sizes 
+
 ✅ **Firebase Integration** – Dynamic content fetched from Firestore
 
 ## 🛠 Tech Stack
