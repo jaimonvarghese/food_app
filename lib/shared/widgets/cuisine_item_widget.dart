@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:food_app/shared/models/cuisine_items.dart';
 import 'package:food_app/shared/widgets/main_card_widget.dart';
 import 'package:google_fonts/google_fonts.dart';
 
@@ -12,7 +13,7 @@ class CuisineItemWidget extends StatelessWidget {
     required this.imageWidth,
   });
 
-  final Map<String, String> cuisine;
+  final CuisineItems cuisine;
   final double typeTxtsize;
   final double descTxtsize;
   final double imageHeight;
@@ -27,21 +28,21 @@ class CuisineItemWidget extends StatelessWidget {
       ),
       padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 8),
       child: Row(
-        crossAxisAlignment: CrossAxisAlignment.center, // Align items vertically
+        crossAxisAlignment: CrossAxisAlignment.center,
         children: [
           MainCardWidget(
             imageHeight: imageHeight,
-            imagepath: cuisine["image"]!,
+            imagepath: cuisine.image,
             imageWidth: imageWidth,
           ),
           const SizedBox(width: 10),
           Expanded(
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
-              mainAxisAlignment: MainAxisAlignment.center, // Center text vertically
+              mainAxisAlignment: MainAxisAlignment.center,
               children: [
                 Text(
-                  cuisine["type"]!,
+                  cuisine.type,
                   style: GoogleFonts.poppins(
                     fontWeight: FontWeight.w600,
                     fontSize: typeTxtsize,
@@ -49,7 +50,7 @@ class CuisineItemWidget extends StatelessWidget {
                 ),
                 const SizedBox(height: 2),
                 Text(
-                  cuisine["desc"]!,
+                  cuisine.desc,
                   style: GoogleFonts.poppins(
                     fontSize: descTxtsize,
                     color: Colors.grey[600],

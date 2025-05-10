@@ -76,10 +76,10 @@ class FeatueredHiveBoxWidget extends StatelessWidget {
                   dotColor2: dotColor2,
                   loctionTxtSize: loctionTxtSize,
                   restaurantTxtSize: restaurantTxtSize,
-                  drictionContainerHeight: drictionContainerHeight,
                   drictionContainerWidth: drictionContainerWidth,
-                  drictionImageHeight: drictionImageHeight,
+                  drictionContainerHeight: drictionContainerHeight,
                   drictionImageWidth: drictionImageWidth,
+                  drictionImageHeight: drictionImageHeight,
                 );
               },
               itemCount: 2,
@@ -99,7 +99,10 @@ class FeatueredHiveBoxWidget extends StatelessWidget {
                 onPressed: () {},
                 child: Text(
                   'view all hives',
-                  style: TextStyle(fontSize: viewAllTxtSize, color: Colors.black),
+                  style: TextStyle(
+                    fontSize: viewAllTxtSize,
+                    color: Colors.black,
+                  ),
                 ),
               ),
             ),

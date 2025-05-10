@@ -44,6 +44,72 @@ class FeatueredHiveBoxItemWidget extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+
+    return FeaturedHiveContainerWidget(
+      fcontainerHeight: fcontainerHeight,
+      fsizedboxHeight: fsizedboxHeight,
+      imageHeight: imageHeight,
+      imageWidth: imageWidth,
+      pricesize: pricesize,
+      bigImageHeight: bigImageHeight,
+      bigImageWidth: bigImageWidth,
+      dotHeight: dotHeight,
+      dotWidth: dotWidth,
+      dotColor1: dotColor1,
+      dotColor2: dotColor2,
+      loctionTxtSize: loctionTxtSize,
+      restaurantTxtSize: restaurantTxtSize,
+      drictionContainerWidth: drictionContainerWidth,
+      drictionContainerHeight: drictionContainerHeight,
+      drictionImageWidth: drictionImageWidth,
+      drictionImageHeight: drictionImageHeight,
+    );
+  }
+}
+
+class FeaturedHiveContainerWidget extends StatelessWidget {
+  const FeaturedHiveContainerWidget({
+    super.key,
+    required this.fcontainerHeight,
+    required this.fsizedboxHeight,
+    required this.imageHeight,
+    required this.imageWidth,
+    required this.pricesize,
+    required this.bigImageHeight,
+    required this.bigImageWidth,
+    required this.dotHeight,
+    required this.dotWidth,
+    required this.dotColor1,
+    required this.dotColor2,
+    required this.loctionTxtSize,
+    required this.restaurantTxtSize,
+    required this.drictionContainerWidth,
+    required this.drictionContainerHeight,
+    required this.drictionImageWidth,
+    required this.drictionImageHeight,
+  });
+
+  final double fcontainerHeight;
+  final double fsizedboxHeight;
+  final double imageHeight;
+  final double imageWidth;
+  final double pricesize;
+  final double bigImageHeight;
+  final double bigImageWidth;
+  final double dotHeight;
+  final double dotWidth;
+  final Color dotColor1;
+  final Color dotColor2;
+  final double loctionTxtSize;
+  final double restaurantTxtSize;
+  final double drictionContainerWidth;
+  final double drictionContainerHeight;
+  final double drictionImageWidth;
+  final double drictionImageHeight;
+  
+
+  @override
+  Widget build(BuildContext context) {
     return Container(
       width: double.infinity,
       height: fcontainerHeight,
@@ -63,17 +129,15 @@ class FeatueredHiveBoxItemWidget extends StatelessWidget {
                 flex: 3,
                 child: SizedBox(
                   height: fsizedboxHeight,
-                  child: ListView.separated(
-                    scrollDirection: Axis.horizontal,
-                    separatorBuilder: (ctx, index) => SizedBox(width: 10),
-                    itemBuilder: (ctx, index) {
-                      return Column(
+                  child: Row(
+                    children: [
+                      Column(
                         children: [
                           SizedBox(height: 15),
                           MainCardWidget(
                             imageHeight: imageHeight,
                             imageWidth: imageWidth,
-                            imagepath: 'assets/images/biryani.png',
+                            imagepath: 'assets/images/c1.png',
                           ),
                           SizedBox(height: 10),
                           Text(
@@ -81,9 +145,40 @@ class FeatueredHiveBoxItemWidget extends StatelessWidget {
                             style: TextStyle(fontSize: pricesize),
                           ),
                         ],
-                      );
-                    },
-                    itemCount: 3,
+                      ),
+                      SizedBox(width: 10),
+                      Column(
+                        children: [
+                          SizedBox(height: 15),
+                          MainCardWidget(
+                            imageHeight: imageHeight,
+                            imageWidth: imageWidth,
+                            imagepath: 'assets/images/c2.png',
+                          ),
+                          SizedBox(height: 10),
+                          Text(
+                            '₹ 450.00',
+                            style: TextStyle(fontSize: pricesize),
+                          ),
+                        ],
+                      ),
+                      SizedBox(width: 10),
+                      Column(
+                        children: [
+                          SizedBox(height: 15),
+                          MainCardWidget(
+                            imageHeight: imageHeight,
+                            imageWidth: imageWidth,
+                            imagepath: 'assets/images/c3.png',
+                          ),
+                          SizedBox(height: 10),
+                          Text(
+                            '₹ 450.00',
+                            style: TextStyle(fontSize: pricesize),
+                          ),
+                        ],
+                      ),
+                    ],
                   ),
                 ),
               ),
@@ -92,7 +187,7 @@ class FeatueredHiveBoxItemWidget extends StatelessWidget {
                 children: [
                   MainCardWidget(
                     imageHeight: bigImageHeight,
-                    imagepath: 'assets/images/biryani.png',
+                    imagepath: 'assets/images/bcimage.png',
                     imageWidth: bigImageWidth,
                   ),
                 ],
@@ -135,7 +230,7 @@ class FeatueredHiveBoxItemWidget extends StatelessWidget {
                   ),
                 ],
               ),
-              SizedBox(width: 10,),
+              SizedBox(width: 10),
               Container(
                 width: drictionContainerWidth,
                 height: drictionContainerHeight,

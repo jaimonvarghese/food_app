@@ -15,6 +15,10 @@ class FoodItemCard extends StatelessWidget {
     required this.newPriceSize,
     required this.eatTxtSize,
     required this.eatIconSize,
+    required this.imagepath,
+    required this.name,
+    required this.newPrice,
+    required this.category,
   });
   final double folcContainerHeight;
   final double imageHeight;
@@ -26,12 +30,16 @@ class FoodItemCard extends StatelessWidget {
   final double newPriceSize;
   final double eatTxtSize;
   final double eatIconSize;
+  final String imagepath;
+  final String name;
+  final String newPrice;
+  final String category;
 
   void _showBottomSheet(BuildContext context) {
     showModalBottomSheet(
       context: context,
-      backgroundColor:Colors.transparent,
-      
+      backgroundColor: Colors.transparent,
+
       builder: (context) {
         return const FoodOptionSheet();
       },
@@ -52,7 +60,7 @@ class FoodItemCard extends StatelessWidget {
         children: [
           MainCardWidget(
             imageHeight: imageHeight,
-            imagepath: 'assets/images/biryani.png',
+            imagepath: imagepath,
             imageWidth: imageWidth,
           ),
           const SizedBox(width: 12),
@@ -62,7 +70,7 @@ class FoodItemCard extends StatelessWidget {
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 Text(
-                  'Chicken Biriyani',
+                  name,
                   style: TextStyle(
                     fontSize: titleSize,
                     fontWeight: FontWeight.bold,
@@ -71,10 +79,14 @@ class FoodItemCard extends StatelessWidget {
                 const SizedBox(height: 4),
                 Row(
                   children: [
-                    Icon(Icons.circle, color: Colors.red, size: iconSize),
+                    Icon(
+                      Icons.circle,
+                      color: category == 'non veg' ? Colors.red : Colors.green,
+                      size: iconSize,
+                    ),
                     SizedBox(width: 4),
                     Text(
-                      'non veg',
+                      category,
                       style: TextStyle(
                         color: Colors.grey,
                         fontSize: categorySize,
@@ -95,7 +107,7 @@ class FoodItemCard extends StatelessWidget {
                     ),
                     SizedBox(width: 8),
                     Text(
-                      '₹300',
+                      newPrice,
                       style: TextStyle(
                         fontWeight: FontWeight.bold,
                         fontSize: newPriceSize,
